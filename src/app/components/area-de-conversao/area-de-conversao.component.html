@@ -1,0 +1,38 @@
+<div id="area-de-conversao">
+
+  <hr>
+  <div class="m-auto d-block card mt-5 shadow" style="width: 80%;">
+  
+    <div class="card-header shadow-sm">
+      Defina as moedas e o valor
+    </div>
+  
+    <div class="m-auto card-body d-flex justify-content-around">
+  
+      <div>
+        <div class="input-group input-group-sm mb-1">
+          <span class="input-group-text">$</span>
+          <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+        </div>
+        <select class="form-select form-select-sm mb-3" name="Moeda" id="moeda1">
+          <option *ngFor="let moeda of getMoedas()" [value]="moeda">{{ moeda.code + " - " + moeda.description }}</option>
+        </select>
+  
+        <button type="button" class="btn btn-primary mb-3">Converter</button>
+  
+      </div>
+  
+      <div>
+        <div class="input-group input-group-sm mb-1">
+          <p type="text" class="form-control mb-0" aria-label="Amount (to the nearest dollar)">00</p>
+        </div>
+        <select class="form-select form-select-sm mb-3" name="Moeda" id="moeda2">
+          <option *ngFor="let moeda of getMoedas()" [value]="moeda">{{ moeda.code + " - " + moeda.description }}</option>
+        </select>
+      </div>
+  
+    </div>
+  
+  </div>
+
+</div>
