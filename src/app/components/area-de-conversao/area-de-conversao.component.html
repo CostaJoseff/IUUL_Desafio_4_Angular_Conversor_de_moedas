@@ -11,23 +11,26 @@
   
       <div>
         <div class="input-group input-group-sm mb-1">
-          <span class="input-group-text">$</span>
-          <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+          <span id="simbolo-atual" class="input-group-text">{{ codigoMoedaSelecionada1() }}</span>
+          <input [(ngModel)]="inputNumero" (input)="inputCheck()" id="valor" type="number" class="form-control" aria-label="Amount (to the nearest dollar)">
         </div>
-        <select class="form-select form-select-sm mb-3" name="Moeda" id="moeda1">
-          <option *ngFor="let moeda of getMoedas()" [value]="moeda">{{ moeda.code + " - " + moeda.description }}</option>
+
+        <select class="form-select form-select-sm mb-3" name="Moeda" id="moeda1" [(ngModel)]="moedaSelecionada1" >
+          <option *ngFor="let moeda of getMoedas()" [value]="moeda">{{ moeda }}</option>
         </select>
   
-        <button type="button" class="btn btn-primary mb-3">Converter</button>
+        <button (click)="converter()" [disabled]="!botaoDisponivel()" id="botao" type="button" class="btn btn-primary mb-3">Converter</button>
   
       </div>
   
       <div>
         <div class="input-group input-group-sm mb-1">
-          <p type="text" class="form-control mb-0" aria-label="Amount (to the nearest dollar)">00</p>
+          <span id="simbolo-atual" class="input-group-text">{{ codigoMoedaSelecionada2() }}</span>
+          <input [(ngModel)]="resultado" [disabled]="true" id="resultado" type="number" class="form-control" aria-label="Amount (to the nearest dollar)">
         </div>
-        <select class="form-select form-select-sm mb-3" name="Moeda" id="moeda2">
-          <option *ngFor="let moeda of getMoedas()" [value]="moeda">{{ moeda.code + " - " + moeda.description }}</option>
+
+        <select class="form-select form-select-sm mb-3" name="Moeda" id="moeda1" [(ngModel)]="moedaSelecionada2" >
+          <option *ngFor="let moeda of getMoedas()" [value]="moeda">{{ moeda }}</option>
         </select>
       </div>
   
