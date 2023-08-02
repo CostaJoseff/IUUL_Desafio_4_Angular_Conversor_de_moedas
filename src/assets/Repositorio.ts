@@ -10,10 +10,11 @@ export class Repositorio {
 
     public getConsultas() {
         let consultas = [];
-        for (let i = 1; i < this.idConsultas; i++) {
+        for (let i = 1; i <= this.idConsultas; i++) {
             let consultaSTR = localStorage.getItem(""+i);
             
             if (consultaSTR === null) {
+                
                 consultaSTR = "{}";
             }
             consultas.push(JSON.parse(consultaSTR));
