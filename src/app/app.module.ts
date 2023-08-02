@@ -7,13 +7,17 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { AreaDeConversaoComponent } from './components/area-de-conversao/area-de-conversao.component';
 import { HistoricoComponent } from './components/historico/historico.component';
+import { PaginaInicialComponent } from './components/pagina-inicial/pagina-inicial.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     AreaDeConversaoComponent,
-    HistoricoComponent
+    HistoricoComponent,
+    PaginaInicialComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
