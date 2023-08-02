@@ -1,0 +1,26 @@
+<table class="table table-striped">
+    <thead>
+        <th>ID</th>
+        <th>Data</th>
+        <th>Hora</th>
+        <th>Valor</th>
+        <th>Moeda selecionada</th>
+        <th>Moeda convertida</th>
+        <th>Resultado</th>
+        <th>Taxa</th>
+        <th>Deletar</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let consulta of consultas">
+            <td>{{ consulta.ID }}</td>
+            <td>{{ consulta.data }}</td>
+            <td>{{ consulta.hora }}</td>
+            <td>{{ consulta.valor }}</td>
+            <td>{{ consulta.moedaSelecionada }}</td>
+            <td>{{ consulta.moedaConvertida }}</td>
+            <td>{{ consulta.resultado }}</td>
+            <td>{{ consulta.taxa }}</td>
+            <td><p>LIXO</p></td>
+        </tr>
+    </tbody>
+</table>

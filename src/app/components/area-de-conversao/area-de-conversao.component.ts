@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { APIConsumer } from 'src/assets/APIConsumer';
+import { Repositorio } from 'src/assets/Repositorio';
 
 @Component({
   selector: 'app-area-de-conversao',
@@ -8,6 +10,10 @@ import { Component } from '@angular/core';
 export class AreaDeConversaoComponent {
   private moedas: any[] = [];
   private moedasSTR: String[] = [];
+  private apiConsumer: APIConsumer;
+
+  private repositorio: Repositorio;
+
   public moedaSelecionada1: any;
   public moedaSelecionada2: any;
   private moeda1FoiEscolhida: boolean;
@@ -22,34 +28,15 @@ export class AreaDeConversaoComponent {
     this.valorFoiEscolhido = false;
     this.inputNumero = 0;
     this.resultado = 0;
+    this.apiConsumer = new APIConsumer();
+    this.repositorio = new Repositorio();
   }
 
   ngOnInit() {
-    this.solicitarMoedas()
-      .then((resposta: any) => {
-        this.moedas = Object.values(resposta);
-      });
-
-      setTimeout(() => {
-        for (let elemento of this.moedas) {
-          this.moedasSTR.push(`${elemento.code} - ${elemento.description}`);
-        }
-      }, 500);
-  }
-
-  private solicitarMoedas() {
-    const url = 'https://api.exchangerate.host/symbols';
-    const solicitador = new XMLHttpRequest();
-    solicitador.open('GET', url);
-    solicitador.responseType = 'json';
-    solicitador.send();
-
-    return new Promise((resolve) => {
-      solicitador.onload = function() {
-        var response = solicitador.response; 
-        resolve(response.symbols);
-      }
-    });
+    setTimeout(() => {
+      this.moedas = this.apiConsumer.getMoedas();
+      this.moedasSTR = this.apiConsumer.getMoedasSTR();
+    }, 1000);
   }
 
   public inputCheck() {
@@ -88,24 +75,11 @@ export class AreaDeConversaoComponent {
   }
 
   public converter() {
-    this.solicitarConversao()
+    this.apiConsumer.solicitarConversao(this.moedaSelecionada1, this.moedaSelecionada2, this.inputNumero)
       .then((resposta: any) => {
-        this.resultado = resposta.toFixed(2);
+        const date = new Date();
+        this.resultado = resposta.result.toFixed(2);
+        this.repositorio.setConsulta(date, resposta);
       });
-  }
-
-  private solicitarConversao() {
-    return new Promise((resolve) => {
-      var requestURL = `https://api.exchangerate.host/convert?from=${this.moedaSelecionada1.split(" ")[0]}&to=${this.moedaSelecionada2.split(" ")[0]}&amount=${this.inputNumero}`; 
-      var request = new XMLHttpRequest(); 
-      request.open('GET', requestURL);
-      request.responseType = 'json';
-      request.send();
-
-      request.onload = function() {
-        var response = request.response;
-        resolve(response.result);
-      }
-    });
   }
 }
