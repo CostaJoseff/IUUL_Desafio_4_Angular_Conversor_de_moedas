@@ -12,6 +12,22 @@ export class HistoricoComponent {
 
   constructor() {
     this.repositorio = new Repositorio();
-    this.consultas = this.repositorio.getConsultas();
+    this.consultas = this.repositorio.getConsultas(); 
+  }
+
+  public deletar(linha: any) {
+    const indice = this.consultas.indexOf(linha);
+    this.deletarConsulta(indice);
+    this.repositorio.removerConsulta(linha);
+  }
+
+  private deletarConsulta(indice: number) {
+    let novoArray: any = [];
+    this.consultas.forEach((consulta: any) => {
+      if (consulta !== this.consultas[indice]) {
+        novoArray.push(consulta);
+      }
+    });
+    this.consultas = novoArray;
   }
 }

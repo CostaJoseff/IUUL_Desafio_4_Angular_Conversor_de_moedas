@@ -18,9 +18,12 @@
           <option *ngFor="let moeda of getMoedas()" [value]="moeda">{{ moeda }}</option>
         </select>
   
-        <button (click)="converter()" [disabled]="!botaoDisponivel()" id="botao" type="button" class="btn btn-primary mb-3">Converter</button>
+        
+        <button (click)="converter()" [disabled]="!botaoDisponivel()" id="botao" type="button" class="btn btn-primary mb-3"><i class="bi bi-cash-stack"></i>  Converter</button>
   
       </div>
+
+      <i class="bi bi-arrow-right"></i>
   
       <div>
         <div class="input-group input-group-sm mb-1">

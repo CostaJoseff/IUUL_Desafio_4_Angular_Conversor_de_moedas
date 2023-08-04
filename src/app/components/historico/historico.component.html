@@ -11,16 +11,16 @@
         <th>Deletar</th>
     </thead>
     <tbody>
-        <tr *ngFor="let consulta of consultas">
-            <td>{{ consulta.ID }}</td>
-            <td>{{ consulta.data }}</td>
-            <td>{{ consulta.hora }}</td>
-            <td>{{ consulta.valor }}</td>
-            <td>{{ consulta.moedaSelecionada }}</td>
-            <td>{{ consulta.moedaConvertida }}</td>
-            <td>{{ consulta.resultado }}</td>
-            <td>{{ consulta.taxa }}</td>
-            <td><p>LIXO</p></td>
+        <tr *ngFor="let linha of consultas">
+            <td>{{ linha.ID }}</td>
+            <td>{{ linha.data }}</td>
+            <td>{{ linha.hora }}</td>
+            <td>{{ linha.valor }}</td>
+            <td>{{ linha.moedaSelecionada }}</td>
+            <td>{{ linha.moedaConvertida }}</td>
+            <td>{{ linha.resultado }}</td>
+            <td>{{ linha.taxa }}</td>
+            <td><i class="bi bi-trash" (click)="deletar(linha)"></i></td>
         </tr>
     </tbody>
 </table>
