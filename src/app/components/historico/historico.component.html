@@ -1,26 +1,26 @@
-<table class="table table-striped">
-    <thead>
-        <th>ID</th>
-        <th>Data</th>
-        <th>Hora</th>
-        <th>Valor</th>
-        <th>Moeda selecionada</th>
-        <th>Moeda convertida</th>
-        <th>Resultado</th>
-        <th>Taxa</th>
-        <th>Deletar</th>
-    </thead>
-    <tbody>
-        <tr *ngFor="let linha of consultas">
-            <td>{{ linha.ID }}</td>
-            <td>{{ linha.data }}</td>
-            <td>{{ linha.hora }}</td>
-            <td>{{ linha.valor }}</td>
-            <td>{{ linha.moedaSelecionada }}</td>
-            <td>{{ linha.moedaConvertida }}</td>
-            <td>{{ linha.resultado }}</td>
-            <td>{{ linha.taxa }}</td>
-            <td><i class="bi bi-trash" (click)="deletar(linha)"></i></td>
-        </tr>
-    </tbody>
-</table>
+<div id="tabela" class="pt-3 table-responsive-sm">
+    <table class="table table-striped table-hover table-bordered">
+        <thead class="bg-light text-center">
+            <th>Data</th>
+            <th>Hora</th>
+            <th>Valor</th>
+            <th>Moeda selecionada</th>
+            <th>Moeda convertida</th>
+            <th>Resultado</th>
+            <th>Taxa</th>
+            <th>Deletar</th>
+        </thead>
+        <tbody class="align-middle text-center">
+            <tr *ngFor="let linha of consultas">
+                <td>{{ linha.data }}</td>
+                <td>{{ linha.hora }}</td>
+                <td>{{ linha.valor }}</td>
+                <td>{{ linha.moedaSelecionada }}</td>
+                <td>{{ linha.moedaConvertida }}</td>
+                <td>{{ linha.resultado }}</td>
+                <td>{{ linha.taxa }}</td>
+                <td><i class="bi bi-trash" (click)="deletar(linha)"></i></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,10 @@
+#area-principal{
+  height: 550px;
+  background-image: url("../../../assets/imgs/money-bg.jpg");
+}
+
+@media (max-width: 320px) {
+  #area-principal{
+    height: 400px;
+  }
+}

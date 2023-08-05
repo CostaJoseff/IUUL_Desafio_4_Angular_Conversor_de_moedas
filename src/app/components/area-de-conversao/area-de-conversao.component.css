@@ -1,0 +1,9 @@
+#area-de-conversao {
+  height: 550px;
+  background-color: #F2F2F2;
+}
+
+@media (max-width: 425px) {
+  .moedas {
+  }
+}

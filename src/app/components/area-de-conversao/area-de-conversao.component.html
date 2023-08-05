@@ -14,7 +14,7 @@
           <input [(ngModel)]="inputNumero" (input)="inputCheck()" id="valor" type="number" class="form-control" aria-label="Amount (to the nearest dollar)">
         </div>
 
-        <select class="form-select form-select-sm mb-3" name="Moeda" id="moeda1" [(ngModel)]="moedaSelecionada1" >
+        <select class="form-select form-select-sm mb-3 moedas" name="Moeda" id="moeda1" [(ngModel)]="moedaSelecionada1" >
           <option *ngFor="let moeda of getMoedas()" [value]="moeda">{{ moeda }}</option>
         </select>
   
@@ -31,7 +31,7 @@
           <input [(ngModel)]="resultado" [disabled]="true" id="resultado" type="number" class="form-control" aria-label="Amount (to the nearest dollar)">
         </div>
 
-        <select class="form-select form-select-sm mb-3" name="Moeda" id="moeda1" [(ngModel)]="moedaSelecionada2" >
+        <select class="form-select form-select-sm mb-3 moedas" name="Moeda" id="moeda1" [(ngModel)]="moedaSelecionada2" >
           <option *ngFor="let moeda of getMoedas()" [value]="moeda">{{ moeda }}</option>
         </select>
       </div>
