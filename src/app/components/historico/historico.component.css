@@ -1,4 +1,12 @@
-#tabela {
-  height: 550px;
+#tabela-area {
+  margin-top: 130px;
+  padding-left: 20px;
+  padding-right: 20px;
+  max-height: 550px;
+  overflow-y: auto;
   background-color: #F2F2F2;
+}
+
+i {
+  cursor: pointer;
 }

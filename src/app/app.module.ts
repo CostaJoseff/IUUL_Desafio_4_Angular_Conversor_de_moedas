@@ -9,6 +9,7 @@ import { AreaDeConversaoComponent } from './components/area-de-conversao/area-de
 import { HistoricoComponent } from './components/historico/historico.component';
 import { PaginaInicialComponent } from './components/pagina-inicial/pagina-inicial.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { ListagemDeMoedasComponent } from './components/listagem-de-moedas/listagem-de-moedas.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { FooterComponent } from './components/footer/footer.component';
     AreaDeConversaoComponent,
     HistoricoComponent,
     PaginaInicialComponent,
-    FooterComponent
+    FooterComponent,
+    ListagemDeMoedasComponent
   ],
   imports: [
     BrowserModule,

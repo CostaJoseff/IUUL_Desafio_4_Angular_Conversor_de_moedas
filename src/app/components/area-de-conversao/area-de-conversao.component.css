@@ -1,9 +1,17 @@
 #area-de-conversao {
-  height: 550px;
-  background-color: #F2F2F2;
+  margin-top: 30vh;
+  background-color: #dfdfdf;
 }
 
-@media (max-width: 425px) {
-  .moedas {
-  }
+#seta{
+  font-size: 30px;
+}
+
+button {
+  --bs-btn-disabled-bg: #0d6dfda1;
+  --bs-btn-disabled-color: rgba(0, 0, 0, 0.575);
+}
+
+select {
+  cursor: pointer;
 }
