@@ -1,1 +1,25 @@
-<p>listagem-de-moedas works!</p>
+<div id="area-de-listagem">
+  <div id="input-area" class="espacamento-lateral">
+    <div id="input-box">
+      <h1>Filtrar</h1>
+      <input id="filtro" class="form-control" type="text" placeholder="Digite o país, moeda ou símbolo">
+      <i class="bi bi-x-lg"></i>
+    </div>
+
+    <div id="tabela">
+      <table class="table table-striped">
+        <thead>
+          <th>Símbolo</th>
+          <th>Descrição</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let moeda of moedas">
+            <td>{{ moeda.code }}</td>
+            <td>{{ moeda.description }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</div>

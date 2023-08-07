@@ -1,0 +1,55 @@
+#area-de-listagem {
+  margin-top: 130px;
+  background-color: #dfdfdf;
+}
+
+#tabela {
+  text-align: center;
+  font-size: 25px;
+  max-height: 500px;
+  width: 100%;
+  overflow-y: auto;
+}
+
+#input-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#filtro {
+  margin: 20px 0;
+  padding-right: 30px;
+}
+
+#filtro + i {
+  position: absolute;
+  left: 62.5%;
+  top: 64%;
+}
+
+#input-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #212529;
+  position: relative;
+  width: 100%;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+#input-box > input {
+  width: 30%;
+}
+
+.espacamento-lateral{
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+h1 {
+  margin-top: 10px;
+  color: rgb(226, 226, 226);
+  text-align: center;
+}

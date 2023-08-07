@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { APIConsumer } from 'src/assets/APIConsumer';
-import { Repositorio } from 'src/assets/Repositorio';
+import { APIConsumer } from '../../../assets/APIConsumer';
+import { Repositorio } from '../../../assets/Repositorio';
 
 @Component({
   selector: 'app-area-de-conversao',

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Repositorio } from 'src/assets/Repositorio';
+import { Repositorio } from '../../../assets/Repositorio';
 
 @Component({
   selector: 'app-historico',
