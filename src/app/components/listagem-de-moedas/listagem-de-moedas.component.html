@@ -2,12 +2,12 @@
   <div id="input-area" class="espacamento-lateral">
     <div id="input-box">
       <h1>Filtrar</h1>
-      <input id="filtro" class="form-control" type="text" placeholder="Digite o país, moeda ou símbolo">
+      <input (keyup)="filtrar($event)" [(ngModel)]="filtro" id="filtro" class="form-control" type="text" placeholder="Digite o país, moeda ou símbolo">
       <i class="bi bi-x-lg"></i>
     </div>
 
     <div id="tabela">
-      <table class="table table-striped">
+      <table class="table table-striped table-hover">
         <thead>
           <th>Símbolo</th>
           <th>Descrição</th>
